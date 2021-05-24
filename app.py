@@ -44,5 +44,7 @@ def predict_api():
     output = prediction[0]
     return jsonify(output)
 
-if __name__ == "__main__":
-    app.run(debug=True)
+if __name__ == "__main_":
+	app.debug = False
+	from werkzeug.serving import run_simple
+	run_simple("localhost", 5000, app)
